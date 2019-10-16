@@ -243,12 +243,12 @@ class DatePicker extends Component {
   }
 
   setTime(event, date) {
-    if (date === undefined) {
-      this.onPressCancel();
-    } else  {
-      this.setState({ date: date });
-      this.datePicked();
-    }
+    // if (date === undefined) {
+    //   this.onPressCancel();
+    // } else  {
+    //   this.setState({ date: date });
+    //   this.datePicked();
+    // }
   }
 
   onDatetimeTimePicked(year, month, day, {action, hour, minute}) {
