@@ -220,7 +220,7 @@ class DatePicker extends Component {
   }
 
   onDatetimePicked({action, year, month, day}) {
-    const {mode, androidMode, format = FORMATS[mode], is24Hour = !format.match(/h|a/)} = this.props;
+    const {mode, format = FORMATS[mode], is24Hour = !format.match(/h|a/)} = this.props;
 
     if (action !== DatePickerAndroid.dismissedAction) {
       let timeMoment = Moment(this.state.date);
@@ -235,14 +235,14 @@ class DatePicker extends Component {
         mode="time"
         value={timeMoment}
         is24Hour={is24Hour}
-        onChange={this.setTime}
-        />
+        onChange={(event, date) => this.setTime(event, date)}
+      />
     } else {
       this.onPressCancel();
     }
   }
 
-  setTime = (event, date) => {
+  setTime(event, date) {
     if (date === undefined) {
       this.onPressCancel();
     } else  {
